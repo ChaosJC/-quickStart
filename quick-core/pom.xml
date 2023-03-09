@@ -67,10 +67,10 @@
             <artifactId>commons-pool2</artifactId>
         </dependency>
         <!--  Forest，http请求工具   -->
-        <!--        <dependency>
-                    <groupId>com.dtflys.forest</groupId>
-                    <artifactId>forest-spring-boot-starter</artifactId>
-                    <version>1.5.28</version>
-                </dependency>-->
+        <dependency>
+            <groupId>com.dtflys.forest</groupId>
+            <artifactId>forest-spring-boot-starter</artifactId>
+            <version>1.5.28</version>
+        </dependency>
     </dependencies>
 </project>

@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 
 /**
  * MybatisPlus多租户、防全表更新与删除、分页配置
+ * @author Chaos
  */
 @Configuration
 public class MybatisTenantPlusConfig {
@@ -22,11 +23,13 @@ public class MybatisTenantPlusConfig {
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        //多租户插件，不用可注释
         TenantLineInnerInterceptor tenantLineInnerInterceptor = new MyTenantLineInnerInterceptor();
         tenantLineInnerInterceptor.setTenantLineHandler(myTenantLineHandler);
-        //多租户插件
-        //interceptor.addInnerInterceptor(tenantLineInnerInterceptor);
+        interceptor.addInnerInterceptor(tenantLineInnerInterceptor);
+        //防止更新全表插件
         interceptor.addInnerInterceptor(new BlockAttackInnerInterceptor());
+        //分页插件
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
         return interceptor;
 

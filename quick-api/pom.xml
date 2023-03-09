@@ -8,5 +8,13 @@
     <artifactId>quick-api</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>quick.start</groupId>
+            <artifactId>quick-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
 
 </project>
