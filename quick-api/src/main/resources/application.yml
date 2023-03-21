@@ -4,39 +4,8 @@ server:
     context-path: /api
 spring:
   profiles:
-    active: local
+    active: basic,dev
   application:
     name:  quick-start-api
-  jackson:
-    date-format: yyyy-MM-dd HH:mm:ss
-    time-zone: GMT+8
-    serialization:
-      #格式化输出
-      indent-output: true
-      #忽略无法转换的对象
-      fail-on-empty-beans: false
 
-  #解决Knife4j在springboot2.7下报错的问题
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
 
-# Sa-Token 配置
-sa-token:
-  # SSO-相关配置
-  sso:
-    # SSO-Server端 统一认证地址
-    auth-url: http://sa-sso-server.com:8848/sa-token-demo-sso-server-h5/sso-auth.html
-    #是否打开单点注销功能
-    is-slo: true
-
-#mybatis-plus配置控制台打印完整带参数SQL语句
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-#forest配置
-forest:
-  max-connections: 1000        # 连接池最大连接数
-  connect-timeout: 3000        # 连接超时时间，单位为毫秒
-  read-timeout: 3000           # 数据读取超时时间，单位为毫秒

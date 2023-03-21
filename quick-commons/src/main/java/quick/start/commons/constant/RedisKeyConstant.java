@@ -1,4 +1,4 @@
-package quick.start.commons;
+package quick.start.commons.constant;
 
 /**
  * @author chaos
@@ -15,10 +15,5 @@ public class RedisKeyConstant {
      * 手机验证码
      */
     public static String SMS_CAPTCHA = "captcha:sms:";
-    /**
-     * 多租户应用数据共享
-     */
-    public static String TENANT_APP_IDS = "tenant:appid:";
-
 
 }
